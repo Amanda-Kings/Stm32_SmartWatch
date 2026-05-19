@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "STM32_Keil",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Lib/**",
+                "${workspaceFolder}/App/**",
+                "${workspaceFolder}/BSP/**"
+            ],
+            "defines": [
+                "__GNUC__",
+                "STM32F10X_MD",
+                "USE_STDPERIPH_DRIVER"
+            ],
+            "compilerPath": "D:\\AAAsoft\\mingw64\\bin\\gcc.exe",
+            "cStandard": "c99",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}

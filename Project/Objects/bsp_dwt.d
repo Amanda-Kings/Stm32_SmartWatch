@@ -1,0 +1,15 @@
+.\objects\bsp_dwt.o: ..\BSP\MCU\Src\bsp_dwt.c
+.\objects\bsp_dwt.o: ..\BSP\MCU\Inc\bsp_dwt.h
+.\objects\bsp_dwt.o: ..\Inc\stm32f10x_conf.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
+.\objects\bsp_dwt.o: ..\Lib\CMSIS\stm32f10x.h
+.\objects\bsp_dwt.o: ..\Lib\CMSIS\core_cm3.h
+.\objects\bsp_dwt.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdint.h
+.\objects\bsp_dwt.o: ..\Lib\CMSIS\system_stm32f10x.h
+.\objects\bsp_dwt.o: ..\Inc\stm32f10x_conf.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_gpio.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_pwr.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rcc.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
+.\objects\bsp_dwt.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h

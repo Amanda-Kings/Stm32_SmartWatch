@@ -1,0 +1,16 @@
+.\objects\bsp_key.o: ..\BSP\Dev\Src\bsp_key.c
+.\objects\bsp_key.o: ..\BSP\Dev\Inc\bsp_key.h
+.\objects\bsp_key.o: ..\Inc\stm32f10x_conf.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
+.\objects\bsp_key.o: ..\Lib\CMSIS\stm32f10x.h
+.\objects\bsp_key.o: ..\Lib\CMSIS\core_cm3.h
+.\objects\bsp_key.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdint.h
+.\objects\bsp_key.o: ..\Lib\CMSIS\system_stm32f10x.h
+.\objects\bsp_key.o: ..\Inc\stm32f10x_conf.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_gpio.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_pwr.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rcc.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
+.\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
+.\objects\bsp_key.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h

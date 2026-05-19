@@ -1,0 +1,15 @@
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Src\misc.c
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
+.\objects\misc.o: ..\Lib\CMSIS\stm32f10x.h
+.\objects\misc.o: ..\Lib\CMSIS\core_cm3.h
+.\objects\misc.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdint.h
+.\objects\misc.o: ..\Lib\CMSIS\system_stm32f10x.h
+.\objects\misc.o: ..\Inc\stm32f10x_conf.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
+.\objects\misc.o: ..\Lib\CMSIS\stm32f10x.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_gpio.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_pwr.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rcc.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
+.\objects\misc.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h

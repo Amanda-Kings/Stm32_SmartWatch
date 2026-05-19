@@ -1,0 +1,26 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.intelliSenseEngine": "default",
+    // 关键：像编译器一样严格报错
+    "C_Cpp.codeAnalysis.clangTidy.enabled": false,
+    "C_Cpp.default.defines": [
+        "USE_STDPERIPH_DRIVER",
+        "STM32F10X_MD",
+        "__GNUC__"
+    ],
+    // 让 VSCode 把下面这些检查全部打开
+    "C_Cpp.default.compilerArgs": [
+        // "-std=c99",       // 使用 C99 标准
+        "-Wall",         // 打开几乎所有警告
+        "-Wextra",       // 打开额外警告
+        "-Wconversion",  // 隐式类型转换可能丢失数据
+        "-Wsign-conversion", // 有符号/无符号转换
+        "-Wimplicit-function-declaration", // 隐式函数声明必须报错
+        "-Wmissing-declarations",          // 缺少声明
+        "-Wmissing-prototypes",            // 缺少函数原型
+        "-pedantic"     // 严格遵循C99
+    ],
+    // "C_Cpp.codeAnalysis.clangTidy.args": [
+    //     "-checks=*",      // 启用所有 clang-tidy 检查
+    // ],
+}

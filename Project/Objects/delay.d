@@ -1,0 +1,16 @@
+.\objects\delay.o: ..\Utils\Src\delay.c
+.\objects\delay.o: ..\Utils\Inc\delay.h
+.\objects\delay.o: ..\Inc\stm32f10x_conf.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
+.\objects\delay.o: ..\Lib\CMSIS\stm32f10x.h
+.\objects\delay.o: ..\Lib\CMSIS\core_cm3.h
+.\objects\delay.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdint.h
+.\objects\delay.o: ..\Lib\CMSIS\system_stm32f10x.h
+.\objects\delay.o: ..\Inc\stm32f10x_conf.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_gpio.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_pwr.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rcc.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
+.\objects\delay.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
+.\objects\delay.o: ..\BSP\MCU\Inc\bsp_dwt.h
