@@ -5,11 +5,15 @@
 #include <stdio.h>
 #include "delay.h"
 
+/*OLED I2C地址*/
+#define OLED_I2C_ADDR  			((uint8_t)0x78)
+
+
 uint8_t OLED_DisplayBuf[8][128] = {0};
 static void OLED_WriteCommand(uint8_t Command)
 {
     I2C_SW_Start();
-    I2C_SW_SendByte(OLED_I2C_ADDR | 0); // 写入模式
+    I2C_SW_SendByte(OLED_I2C_ADDR | 0);
     I2C_SW_WaitAck();
     I2C_SW_SendByte(0x00);
 	I2C_SW_WaitAck();

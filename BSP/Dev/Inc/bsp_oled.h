@@ -5,21 +5,14 @@
 #include "bsp_oled_data.h"
 #include "stm32f10x_conf.h"
 
-/*OLED I2C地址*/
-enum
-{
-    OLED_I2C_ADDR = 0x78
-};
+// 字体大小
+#define OLED_6X8      6
+#define OLED_8X16     8
+#define OLED_12X24    12
 
-enum
-{
-    OLED_8X16 = 8,
-    OLED_6X8 = 6,
-    OLED_12X24 = 12,
-    /*IsFilled参数数值*/
-    OLED_UNFILLED = 0,
-    OLED_FILLED = 1
-};
+// 填充模式
+#define OLED_UNFILLED   0
+#define OLED_FILLED     1
 
 extern uint8_t OLED_DisplayBuf[8][128];
 

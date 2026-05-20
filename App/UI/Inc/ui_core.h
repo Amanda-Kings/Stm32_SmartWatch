@@ -32,7 +32,7 @@ typedef struct
 typedef struct
 {
     void (*draw)(UI_Page *self);                                 // 全屏绘制
-    void (*on_key_event)(UI_Page *self, KeyObject_TypeDef *key); // 自定义按键处理（可选）
+    void (*on_key_event)(UI_Page *self, KeyEventInfo_TypeDef *key); // 自定义按键处理
 }UI_Page_VTable;
 
 /* 页面基类 */
@@ -47,6 +47,6 @@ struct UI_Page
 
 /* 核心调度接口 */
 void UI_SwitchPage(UI_Page *new_page);      // 切换到新页面
-void UI_OnKeyEvent(KeyObject_TypeDef *key); // 按键事件入口
+void UI_HandleKeyEvent(KeyEventInfo_TypeDef *info); // 按键事件入口
 
 #endif

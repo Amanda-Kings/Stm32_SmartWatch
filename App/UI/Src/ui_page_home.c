@@ -4,7 +4,7 @@
 static UI_Page page_home;
 
 static void Page_Home_Draw(UI_Page *self);
-static void Page_Home_key(UI_Page *self, KeyObject_TypeDef *key);
+static void Page_Home_key(UI_Page *self, KeyEventInfo_TypeDef *key);
 
 // 主页虚函数表
 static const UI_Page_VTable home_vtable = {
@@ -14,19 +14,30 @@ static const UI_Page_VTable home_vtable = {
 // 主页私有时间数据
 static DateTime RTC_Time = {0};
 // 菜单项定义
-static const UI_MenuItem menu_items[] = {
-    { "菜单", OLED_8X16, 0, 48, 32, 16, UI_PAGE_SETTING, NULL },  // 跳转，无自定义动作
-    { "设置", OLED_8X16, 96, 48, 32, 16, UI_PAGE_MAX, NULL }, // 不跳转
+static const UI_MenuItem menu_items[] = 
+{
+    { 
+        .text = "菜单",
+        .font_size = OLED_8X16,
+        .x = 0,
+        .y = 48,
+        .width = 16,
+        .height = 16,
+        .target_page = UI_PAGE_SETTING,
+        .on_select = NULL
+    },  // 跳转，无自定义动作
+    { 
+        .text = "设置",
+        .font_size = OLED_8X16,
+        .x = 96,
+        .y = 48,
+        .width = 16,
+        .height = 16,
+        .target_page = UI_PAGE_MAX,
+        .on_select = NULL
+    } // 不跳转
 };
-void Page_Home_Init(void) {
-    RTC_GetTimeStamp(&RTC_Time);
-    page_home.vtable = &home_vtable;
-    page_home.focus_index = 0;
-    page_home.items = menu_items;
-    page_home.item_count = sizeof(menu_items) / sizeof(menu_items[0]);
-    page_home.data = &RTC_Time;
-    
-}
+
 static void Page_Home_Draw(UI_Page *self)
 {
     DateTime *time = (DateTime *)self->data;
@@ -40,9 +51,9 @@ static void Page_Home_Draw(UI_Page *self)
     }
 	OLED_Update();
 }
-static void Page_Home_key(UI_Page *self, KeyObject_TypeDef *key)
+static void Page_Home_key(UI_Page *self, KeyEventInfo_TypeDef *key)
 {
-    if (key->event != KEY_SHORT_PRESS) return;
+    if (key->event != KEY_EVENT_SHORT) return;
     switch(key->type)
     {
         case KEY_UP:
@@ -74,4 +85,14 @@ static void Page_Home_key(UI_Page *self, KeyObject_TypeDef *key)
         default:
             break;
     }
+}
+
+void Page_Home_Init(void) {
+    RTC_GetTimeStamp(&RTC_Time);
+    page_home.vtable = &home_vtable;
+    page_home.focus_index = 0;
+    page_home.items = menu_items;
+    page_home.item_count = sizeof(menu_items) / sizeof(menu_items[0]);
+    page_home.data = &RTC_Time;
+    
 }

@@ -20,8 +20,8 @@
  */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef D : _CODE_STM32_SMARTWATCH_INC_STM32F10X_CONF_H
-#define D:_CODE_STM32_SMARTWATCH_INC_STM32F10X_CONF_H
+#ifndef __STM32F10X_CONF_H
+#define __STM32F10X_CONF_H
 
 /* Includes ------------------------------------------------------------------*/
 /* Uncomment/Comment the line below to enable/disable peripheral header file inclusion */
@@ -72,6 +72,6 @@ void assert_failed(uint8_t *file, uint32_t line);
 #define assert_param(expr) ((void)0)
 #endif /* USE_FULL_ASSERT */
 
-#endif // D:_CODE_STM32_SMARTWATCH_INC_STM32F10X_CONF_H
+#endif // __STM32F10X_CONF_H
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
