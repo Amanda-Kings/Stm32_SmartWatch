@@ -1,5 +1,6 @@
 .\objects\bsp_oled.o: ..\BSP\Dev\Src\bsp_oled.c
 .\objects\bsp_oled.o: ..\BSP\Dev\Inc\bsp_oled.h
+.\objects\bsp_oled.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\bsp_oled.o: ..\Inc\stm32f10x_conf.h
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
 .\objects\bsp_oled.o: ..\Lib\CMSIS\stm32f10x.h
@@ -13,7 +14,6 @@
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
-.\objects\bsp_oled.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\bsp_oled.o: ..\BSP\Dev\Inc\bsp_oled_data.h
 .\objects\bsp_oled.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdarg.h
 .\objects\bsp_oled.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\math.h

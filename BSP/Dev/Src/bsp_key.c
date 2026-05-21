@@ -102,8 +102,6 @@ static KeyObject_TypeDef keyObjects[] =
     }
 };
 
-#define KEY_COUNT (sizeof(keyObjects) / sizeof(keyObjects[0]))
-
 static void NotifyEvent(KeyObject_TypeDef *key, KeyEvent_TypeDef event) {
     if (callback_table[key->type]) {
         KeyEventInfo_TypeDef info = {
@@ -213,7 +211,7 @@ static void ProcessKey (KeyObject_TypeDef *key, uint8_t level)
 
 void Key_Init(void) 
 {
-    for (int i = 0; i < KEY_COUNT; i++) {
+    for (int i = 0; i < KEY_TYPE_MAX; i++) {
         RCC_APB2PeriphClockCmd(keyObjects[i].hw.RCC_APB2Periph, ENABLE);
         GPIO_InitTypeDef GPIO_InitStruct = {
             .GPIO_Pin = keyObjects[i].hw.GPIO_Pin,
@@ -233,7 +231,7 @@ void Key_RegisterCallback(Key_TypeDef type, KeyCallback_t callback)
 
 void Key_Scan(void) 
 {
-    for (int i = 0; i < KEY_COUNT; i++) {
+    for (int i = 0; i < KEY_TYPE_MAX; i++) {
         uint8_t level = GPIO_ReadInputDataBit(
             keyObjects[i].hw.GPIOx,
             keyObjects[i].hw.GPIO_Pin

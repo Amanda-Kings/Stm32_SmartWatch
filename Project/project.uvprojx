@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Lib\CMSIS;..\Lib\STM32F10x_StdPeriph_Driver\Inc;..\BSP\Dev\Inc;..\BSP\MCU\Inc;..\Inc;..\Utils\Inc;..\App\Inc</IncludePath>
+              <IncludePath>..\Lib\CMSIS;..\Lib\STM32F10x_StdPeriph_Driver\Inc;..\BSP\Dev\Inc;..\BSP\MCU\Inc;..\Inc;..\Utils\Inc;..\App\Inc;..\App\UI\Inc;..\Test\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -385,14 +385,24 @@
           <GroupName>App</GroupName>
           <Files>
             <File>
-              <FileName>app_menu.c</FileName>
+              <FileName>app.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\App\Src\app_menu.c</FilePath>
+              <FilePath>..\App\Src\app.c</FilePath>
             </File>
             <File>
-              <FileName>app_key.c</FileName>
+              <FileName>ui_core.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\App\Src\app_key.c</FilePath>
+              <FilePath>..\App\UI\Src\ui_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_page_home.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\UI\Src\ui_page_home.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_page_menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\UI\Src\ui_page_menu.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -576,6 +586,16 @@
               <FileName>bsp_init.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\bsp_init.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Test</GroupName>
+          <Files>
+            <File>
+              <FileName>test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Test\Src\test.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,6 +1,7 @@
 #ifndef BSP_OLED_DATA_H
 #define BSP_OLED_DATA_H
 
+#include <stdint.h>
 /*字符集定义*/
 /*以下两个宏定义只可解除其中一个的注释*/
 #define OLED_CHARSET_UTF8 // 定义字符集为UTF8

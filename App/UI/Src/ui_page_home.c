@@ -1,6 +1,7 @@
 #include "ui_page_home.h"
 #include "bsp_rtc.h"
 
+
 static UI_Page page_home;
 
 static void Page_Home_Draw(UI_Page *self);
@@ -21,7 +22,7 @@ static const UI_MenuItem menu_items[] =
         .font_size = OLED_8X16,
         .x = 0,
         .y = 48,
-        .width = 16,
+        .width = 32,
         .height = 16,
         .target_page = UI_PAGE_SETTING,
         .on_select = NULL
@@ -31,7 +32,7 @@ static const UI_MenuItem menu_items[] =
         .font_size = OLED_8X16,
         .x = 96,
         .y = 48,
-        .width = 16,
+        .width = 32,
         .height = 16,
         .target_page = UI_PAGE_MAX,
         .on_select = NULL
@@ -40,6 +41,7 @@ static const UI_MenuItem menu_items[] =
 
 static void Page_Home_Draw(UI_Page *self)
 {
+    RTC_GetTimeStamp(&RTC_Time);
     DateTime *time = (DateTime *)self->data;
     // 绘制主页内容
     OLED_Clear();
@@ -49,50 +51,52 @@ static void Page_Home_Draw(UI_Page *self)
     {
         OLED_ShowString(self->items[i].x,self->items[i].y,self->items[i].text,self->items[i].font_size);
     }
+     // 绘制焦点反显
+    OLED_ReverseArea(self->items[self->focus_index].x,
+                     self->items[self->focus_index].y,
+                     self->items[self->focus_index].width,
+                     self->items[self->focus_index].height);
 	OLED_Update();
 }
 static void Page_Home_key(UI_Page *self, KeyEventInfo_TypeDef *key)
 {
     if (key->event != KEY_EVENT_SHORT) return;
+
     switch(key->type)
     {
         case KEY_UP:
-            self->focus_index = (self->focus_index + self->item_count - 1) % self->item_count; // 上移
-            //更新界面焦点显示（例如反转选中项）
-            OLED_Clear();
-            OLED_ReverseArea(self->items[self->focus_index].x,self->items[self->focus_index].y,
-                self->items[self->focus_index].width,self->items[self->focus_index].height);
-            OLED_Update();
+            self->focus_index = (self->focus_index + self->item_count - 1) % self->item_count;
+            Page_Home_Draw(self);  // 重绘整个页面
             break;
+            
         case KEY_DOWN:
-            self->focus_index = (self->focus_index + 1) % self->item_count; // 下移
-            //更新界面焦点显示（例如反转选中项）
-            OLED_Clear();
-            OLED_ReverseArea(self->items[self->focus_index].x,self->items[self->focus_index].y,
-                self->items[self->focus_index].width,self->items[self->focus_index].height);
-            OLED_Update();
+            self->focus_index = (self->focus_index + 1) % self->item_count;
+            Page_Home_Draw(self);
             break;
-        case KEY_ENTER:
-            if(self->items[self->focus_index].target_page != UI_PAGE_MAX)
-            {
-                UI_SwitchPage((UI_Page *)self->items[self->focus_index].target_page); // 切换页面
-            }
-            else if(self->items[self->focus_index].on_select)
-            {
-                self->items[self->focus_index].on_select(self); // 执行自定义动作
+            
+        case KEY_ENTER: {
+            UI_Page_TypeDef target = self->items[self->focus_index].target_page;
+            if (target != UI_PAGE_MAX) {
+                UI_SwitchPage(target);
+            } else if (self->items[self->focus_index].on_select) {
+                self->items[self->focus_index].on_select(self);
             }
             break;
+        }
         default:
             break;
     }
 }
 
 void Page_Home_Init(void) {
-    RTC_GetTimeStamp(&RTC_Time);
+    page_home.page_state = UI_PAGE_HOME;
     page_home.vtable = &home_vtable;
     page_home.focus_index = 0;
     page_home.items = menu_items;
     page_home.item_count = sizeof(menu_items) / sizeof(menu_items[0]);
     page_home.data = &RTC_Time;
-    
+    page_home.refresh_interval = 0;
+    page_home.last_refresh = 0;
+
+    UI_RegisterPage(&page_home);
 }

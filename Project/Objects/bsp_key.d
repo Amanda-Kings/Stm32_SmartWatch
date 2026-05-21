@@ -13,4 +13,3 @@
 .\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
 .\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
 .\objects\bsp_key.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
-.\objects\bsp_key.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h

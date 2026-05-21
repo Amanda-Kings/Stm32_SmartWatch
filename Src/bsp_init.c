@@ -10,6 +10,7 @@ void BSP_Init(void)
     DWT_Init();
     RTC_Init();
     UART1_Init();
-    OLED_Init();    
+    OLED_Init();  
     SysTick_Init();
+    Key_Init();
 }

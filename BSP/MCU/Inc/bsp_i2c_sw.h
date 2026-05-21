@@ -1,5 +1,5 @@
-#ifndef D : _CODE_STM32_SMARTWATCH_BSP_MCU_INC_BSP_I2C_SW_H
-#define D:_CODE_STM32_SMARTWATCH_BSP_MCU_INC_BSP_I2C_SW_H
+#ifndef BSP_I2C_SW_H
+#define BSP_I2C_SW_H
 
 #include "stm32f10x_conf.h"
 enum

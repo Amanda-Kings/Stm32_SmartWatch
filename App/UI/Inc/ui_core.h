@@ -38,15 +38,23 @@ typedef struct
 /* 页面基类 */
 struct UI_Page
 {
+    UI_Page_TypeDef page_state;    // 页面状态
     const UI_Page_VTable *vtable; // 虚函数表
     uint8_t focus_index;          // 当前焦点索引
     const UI_MenuItem *items;     // 菜单项数组（非菜单页为 NULL）
     uint8_t item_count;           // 菜单项个数
     void *data;                   // 子类私有数据
+    uint16_t refresh_interval;  // 刷新间隔(ms)，0表示不需要
+    uint32_t last_refresh;      // 上次刷新的tick
 };
 
 /* 核心调度接口 */
-void UI_SwitchPage(UI_Page *new_page);      // 切换到新页面
+void UI_Init(void);
+void UI_RegisterPage(UI_Page *page);
+void UI_Refresh(void);
+UI_Page UI_GetCurrentPage(void);
+UI_Page UI_GetPage(UI_Page_TypeDef page_id);
+void SetPageRefreshInterval(UI_Page_TypeDef page_id,uint16_t interval);
+void UI_SwitchPage(UI_Page_TypeDef target);      // 切换到新页面
 void UI_HandleKeyEvent(KeyEventInfo_TypeDef *info); // 按键事件入口
-
 #endif

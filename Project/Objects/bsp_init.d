@@ -17,7 +17,6 @@
 .\objects\bsp_init.o: ..\BSP\MCU\Inc\bsp_rtc.h
 .\objects\bsp_init.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\time.h
 .\objects\bsp_init.o: ..\BSP\MCU\Inc\bsp_uart.h
-.\objects\bsp_init.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdio.h
 .\objects\bsp_init.o: ..\BSP\Dev\Inc\bsp_oled.h
 .\objects\bsp_init.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\bsp_init.o: ..\BSP\Dev\Inc\bsp_oled_data.h
