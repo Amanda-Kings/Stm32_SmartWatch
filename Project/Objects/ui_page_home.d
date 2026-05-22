@@ -1,6 +1,6 @@
-.\objects\ui_page_home.o: ..\App\UI\Src\ui_page_home.c
-.\objects\ui_page_home.o: ..\App\UI\Inc\ui_page_home.h
-.\objects\ui_page_home.o: ..\App\UI\Inc\ui_core.h
+.\objects\ui_page_home.o: ..\App\UI\Page\Home\Src\ui_page_home.c
+.\objects\ui_page_home.o: ..\App\UI\Page\Home\Inc\ui_page_home.h
+.\objects\ui_page_home.o: ..\App\UI\Core\Inc\ui_core.h
 .\objects\ui_page_home.o: ..\BSP\Dev\Inc\bsp_key.h
 .\objects\ui_page_home.o: ..\Inc\stm32f10x_conf.h
 .\objects\ui_page_home.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
@@ -18,5 +18,6 @@
 .\objects\ui_page_home.o: ..\BSP\Dev\Inc\bsp_oled.h
 .\objects\ui_page_home.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\ui_page_home.o: ..\BSP\Dev\Inc\bsp_oled_data.h
+.\objects\ui_page_home.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h
 .\objects\ui_page_home.o: ..\BSP\MCU\Inc\bsp_rtc.h
 .\objects\ui_page_home.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\time.h

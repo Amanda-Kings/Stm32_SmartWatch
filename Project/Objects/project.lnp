@@ -1,8 +1,9 @@
 --cpu Cortex-M3
-".\objects\app.o"
 ".\objects\ui_core.o"
 ".\objects\ui_page_home.o"
-".\objects\ui_page_menu.o"
+".\objects\ui_page_setting.o"
+".\objects\app.o"
+".\objects\ui_page_setting_datetime.o"
 ".\objects\bsp_led.o"
 ".\objects\bsp_uart.o"
 ".\objects\bsp_i2c_sw.o"

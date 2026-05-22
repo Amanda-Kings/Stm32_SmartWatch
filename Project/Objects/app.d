@@ -1,5 +1,5 @@
-.\objects\app.o: ..\App\Src\app.c
-.\objects\app.o: ..\App\Inc\app.h
+.\objects\app.o: ..\App\Core\Src\app.c
+.\objects\app.o: ..\App\Core\Inc\app.h
 .\objects\app.o: ..\BSP\Dev\Inc\bsp_key.h
 .\objects\app.o: ..\Inc\stm32f10x_conf.h
 .\objects\app.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
@@ -14,9 +14,12 @@
 .\objects\app.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
 .\objects\app.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
 .\objects\app.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
-.\objects\app.o: ..\App\UI\Inc\ui_core.h
+.\objects\app.o: ..\App\UI\Core\Inc\ui_core.h
 .\objects\app.o: ..\BSP\Dev\Inc\bsp_oled.h
 .\objects\app.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\app.o: ..\BSP\Dev\Inc\bsp_oled_data.h
-.\objects\app.o: ..\App\UI\Inc\ui_page_home.h
+.\objects\app.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h
+.\objects\app.o: ..\App\UI\Page\Home\Inc\ui_page_home.h
+.\objects\app.o: ..\App\UI\Page\Setting\Inc\ui_page_setting.h
+.\objects\app.o: ..\App\UI\Page\Setting\Inc\ui_page_setting_datetime.h
 .\objects\app.o: ..\BSP\MCU\Inc\bsp_sys_tick.h

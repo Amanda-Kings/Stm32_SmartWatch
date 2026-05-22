@@ -1,5 +1,5 @@
-.\objects\ui_core.o: ..\App\UI\Src\ui_core.c
-.\objects\ui_core.o: ..\App\UI\Inc\ui_core.h
+.\objects\ui_core.o: ..\App\UI\Core\Src\ui_core.c
+.\objects\ui_core.o: ..\App\UI\Core\Inc\ui_core.h
 .\objects\ui_core.o: ..\BSP\Dev\Inc\bsp_key.h
 .\objects\ui_core.o: ..\Inc\stm32f10x_conf.h
 .\objects\ui_core.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h
@@ -17,6 +17,6 @@
 .\objects\ui_core.o: ..\BSP\Dev\Inc\bsp_oled.h
 .\objects\ui_core.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\ui_core.o: ..\BSP\Dev\Inc\bsp_oled_data.h
-.\objects\ui_core.o: ..\App\UI\Inc\ui_page_home.h
-.\objects\ui_core.o: ..\BSP\MCU\Inc\bsp_sys_tick.h
 .\objects\ui_core.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h
+.\objects\ui_core.o: ..\App\UI\Page\Home\Inc\ui_page_home.h
+.\objects\ui_core.o: ..\BSP\MCU\Inc\bsp_sys_tick.h

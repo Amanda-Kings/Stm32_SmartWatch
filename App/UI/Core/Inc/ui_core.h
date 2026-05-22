@@ -2,6 +2,7 @@
 #define UI_CORE_H
 #include "bsp_key.h"
 #include "bsp_oled.h"
+#include <stddef.h>
 
 /* 前向声明 */
 typedef struct UI_Page UI_Page;
@@ -9,9 +10,10 @@ typedef struct UI_Page UI_Page;
 /* 页面ID */
 typedef enum
 {
-    UI_PAGE_HOME = 0,
-    UI_PAGE_MENU,
-    UI_PAGE_SETTING,
+    UI_PAGE_HOME = 0,           // 主页
+    UI_PAGE_MENU,               // 主菜单
+    UI_PAGE_SETTING,            // 设置
+    UI_PAGE_SETTING_DATETIME,   // 设置时间（二级页面）
     UI_PAGE_MAX
 } UI_Page_TypeDef;
 
@@ -31,7 +33,8 @@ typedef struct
 /* 页面虚函数表 */
 typedef struct
 {
-    void (*draw)(UI_Page *self);                                 // 全屏绘制
+    void (*on_enter)(UI_Page *self);                                // 每次进入页面
+    void (*draw)(UI_Page *self);                                    // 全屏绘制
     void (*on_key_event)(UI_Page *self, KeyEventInfo_TypeDef *key); // 自定义按键处理
 }UI_Page_VTable;
 

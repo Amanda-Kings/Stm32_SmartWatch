@@ -11,10 +11,11 @@ void UI_SwitchPage(UI_Page_TypeDef target) {
     if (target < UI_PAGE_MAX && page_table[target] != NULL) {
         current_page = page_table[target];
         current_page->last_refresh = SysTick_GetTick();
-        if (current_page->vtable && current_page->vtable->draw) {
-            current_page->vtable->draw(current_page);
+        if (current_page->vtable && current_page->vtable->on_enter) {
+            current_page->vtable->on_enter(current_page);
         }
     }
+
 }
 
 // 按键事件处理

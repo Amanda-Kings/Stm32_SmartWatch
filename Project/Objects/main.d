@@ -1,7 +1,7 @@
 .\objects\main.o: ..\Src\main.c
 .\objects\main.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdio.h
 .\objects\main.o: ..\Inc\bsp_init.h
-.\objects\main.o: ..\App\Inc\app.h
+.\objects\main.o: ..\App\Core\Inc\app.h
 .\objects\main.o: ..\Utils\Inc\delay.h
 .\objects\main.o: ..\Inc\stm32f10x_conf.h
 .\objects\main.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_bkp.h

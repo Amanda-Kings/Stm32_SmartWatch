@@ -73,8 +73,8 @@ void RTC_SetTimeStamp(const DateTime *dataTime){
     RTC_WaitForLastTask();
 }
 
-void RTC_GetTimeStamp(DateTime *dataTime){
+DateTime RTC_GetTimeStamp(void){
     RTC_WaitForSynchro();
     uint32_t second = RTC_GetCounter();
-    *dataTime = TimestampToDateTime(second);
+    return TimestampToDateTime(second);
 }

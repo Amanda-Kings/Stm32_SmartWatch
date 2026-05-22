@@ -25,6 +25,6 @@ typedef struct
 
 void RTC_Init(void);
 void RTC_SetTimeStamp(const DateTime *dataTime);
-void RTC_GetTimeStamp(DateTime *dataTime);
+DateTime RTC_GetTimeStamp(void);
 
 #endif
