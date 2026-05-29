@@ -18,3 +18,9 @@ void Delay_s(uint16_t s){
         Delay_ms(1000);
     }
 }
+
+// 延时指定个数的 CPU 时钟周期（72MHz 下，1 周期 ≈ 14ns）
+void Delay_ticks(uint32_t ticks) {
+    uint32_t start = DWT->CYCCNT;
+    while ((DWT->CYCCNT - start) < ticks);
+}

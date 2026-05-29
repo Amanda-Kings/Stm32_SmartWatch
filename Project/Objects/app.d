@@ -17,9 +17,12 @@
 .\objects\app.o: ..\App\UI\Core\Inc\ui_core.h
 .\objects\app.o: ..\BSP\Dev\Inc\bsp_oled.h
 .\objects\app.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
+.\objects\app.o: ..\Utils\Inc\delay.h
+.\objects\app.o: ..\BSP\MCU\Inc\bsp_dwt.h
 .\objects\app.o: ..\BSP\Dev\Inc\bsp_oled_data.h
 .\objects\app.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h
 .\objects\app.o: ..\App\UI\Page\Home\Inc\ui_page_home.h
 .\objects\app.o: ..\App\UI\Page\Setting\Inc\ui_page_setting.h
 .\objects\app.o: ..\App\UI\Page\Setting\Inc\ui_page_setting_datetime.h
+.\objects\app.o: ..\App\UI\Page\Menu\Inc\ui_page_menu.h
 .\objects\app.o: ..\BSP\MCU\Inc\bsp_sys_tick.h

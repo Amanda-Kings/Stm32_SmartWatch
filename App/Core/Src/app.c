@@ -4,6 +4,7 @@
 #include "ui_page_home.h"
 #include "ui_page_setting.h"
 #include "ui_page_setting_datetime.h"
+#include "ui_page_menu.h"
 #include "bsp_sys_tick.h"
 
 void App_Init(void) {
@@ -24,18 +25,19 @@ void App_Init(void) {
     Page_SetDateTime_Init();
     SetPageRefreshInterval(UI_PAGE_SETTING_DATETIME, 0);
 
+    Page_Menu_Init();
+    SetPageRefreshInterval(UI_PAGE_MENU, 0); 
 }
 
-static void App_KeyScanTask(uint16_t delay) {
-    static uint32_t last_tick = 0;
-    if(SysTick_GetTick() - last_tick >= delay)
-    {
-        last_tick = SysTick_GetTick();
-        Key_Scan();
+static void App_KeyEventTask(void) {
+    uint16_t max_events = 16;
+    KeyEventInfo_TypeDef evt;
+    while (max_events-- && Key_QueuePop(&evt)) {
+        callbackItemRun(&evt);   // 此时安全，可绘图
     }
 }
 void App_Task(void)
 {
-    App_KeyScanTask(10);          // 按键扫描(10ms)
+    App_KeyEventTask();
     UI_Refresh();                 // 页面刷新
 }

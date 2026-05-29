@@ -16,3 +16,9 @@
 .\objects\test.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
 .\objects\test.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
 .\objects\test.o: ..\BSP\Dev\Inc\bsp_key.h
+.\objects\test.o: ..\BSP\MCU\Inc\bsp_sys_tick.h
+.\objects\test.o: ..\BSP\Dev\Inc\bsp_oled.h
+.\objects\test.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
+.\objects\test.o: ..\Utils\Inc\delay.h
+.\objects\test.o: ..\BSP\MCU\Inc\bsp_dwt.h
+.\objects\test.o: ..\BSP\Dev\Inc\bsp_oled_data.h

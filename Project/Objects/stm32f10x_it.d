@@ -14,3 +14,4 @@
 .\objects\stm32f10x_it.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
 .\objects\stm32f10x_it.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
 .\objects\stm32f10x_it.o: ..\BSP\MCU\Inc\bsp_sys_tick.h
+.\objects\stm32f10x_it.o: ..\BSP\Dev\Inc\bsp_key.h

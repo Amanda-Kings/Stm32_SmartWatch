@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Lib\CMSIS;..\Lib\STM32F10x_StdPeriph_Driver\Inc;..\BSP\Dev\Inc;..\BSP\MCU\Inc;..\Inc;..\Utils\Inc;..\App\Core\Inc;..\App\UI\Core\Inc;..\Test\Inc;..\App\UI\Page\Home\Inc;..\App\UI\Page\Setting\Inc</IncludePath>
+              <IncludePath>..\Lib\CMSIS;..\Lib\STM32F10x_StdPeriph_Driver\Inc;..\BSP\Dev\Inc;..\BSP\MCU\Inc;..\Inc;..\Utils\Inc;..\App\Core\Inc;..\App\UI\Core\Inc;..\Test\Inc;..\App\UI\Page\Home\Inc;..\App\UI\Page\Setting\Inc;..\App\UI\Page\Menu\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -408,6 +408,16 @@
               <FileName>ui_page_setting_datetime.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\App\UI\Page\Setting\Src\ui_page_setting_datetime.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_page_menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\UI\Page\Menu\Src\ui_page_menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>slide_menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\UI\Page\Menu\Src\slide_menu.c</FilePath>
             </File>
           </Files>
         </Group>

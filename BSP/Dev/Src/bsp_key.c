@@ -4,9 +4,17 @@
 #include "stm32f10x.h"
 #include <stdint.h>
 
+#define KEY_SCAN_DIVIDER  10   // SysTick 分频系数（每 10 次调用扫描一次）
+#define KEY_EVENT_QUEUE_SIZE 8 //队列大小
+
 #define DEBOUNCE_TIME 2 // 20ms消抖
 #define LONG_PRESS_TIME 50 // 500ms长按
 #define REPEAT_TIME 20 // 200ms连发
+
+//事件队列
+static KeyEventInfo_TypeDef key_event_queue[KEY_EVENT_QUEUE_SIZE];
+static volatile uint8_t queue_head = 0;
+static volatile uint8_t queue_tail = 0;
 
 // 按键状态类型
 typedef enum
@@ -102,15 +110,38 @@ static KeyObject_TypeDef keyObjects[] =
     }
 };
 
+static void QueuePush(KeyEventInfo_TypeDef *info) {
+    uint8_t next = (queue_head + 1) % KEY_EVENT_QUEUE_SIZE;
+    if (next != queue_tail) {
+        key_event_queue[queue_head] = *info;
+        queue_head = next;
+    }
+}
+
+uint8_t Key_QueuePop(KeyEventInfo_TypeDef *info) {
+    if (queue_head == queue_tail) return 0;
+    *info = key_event_queue[queue_tail];
+    queue_tail = (queue_tail + 1) % KEY_EVENT_QUEUE_SIZE;
+    return 1;
+}
 static void NotifyEvent(KeyObject_TypeDef *key, KeyEvent_TypeDef event) {
-    if (callback_table[key->type]) {
         KeyEventInfo_TypeDef info = {
             .type = key->type,
             .event = event
         };
-        callback_table[key->type](&info);
-    }
+        if (SCB->ICSR & SCB_ICSR_VECTACTIVE_Msk) {
+            QueuePush(&info);      // 中断中 → 入队
+        }
+        // 
 }
+void callbackItemRun(KeyEventInfo_TypeDef *info)
+{
+    if(callback_table[info->type])
+    {
+        callback_table[info->type](info);
+    }
+} 
+
 static void ProcessKey (KeyObject_TypeDef *key, uint8_t level)
 {
     uint8_t is_active = (level == key->hw.Active_Level);
@@ -237,5 +268,13 @@ void Key_Scan(void)
             keyObjects[i].hw.GPIO_Pin
         );
         ProcessKey(&keyObjects[i], level);
+    }
+}
+static uint8_t key_scan_counter = 0;
+void Key_Scan_Tick(void)
+{
+    if (++key_scan_counter >= KEY_SCAN_DIVIDER) {
+        key_scan_counter = 0;
+        Key_Scan();
     }
 }

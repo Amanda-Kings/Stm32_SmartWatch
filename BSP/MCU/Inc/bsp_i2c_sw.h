@@ -2,6 +2,7 @@
 #define BSP_I2C_SW_H
 
 #include "stm32f10x_conf.h"
+#include "delay.h"
 enum
 {
     ACK = 0,
@@ -15,7 +16,10 @@ enum
 
 #define READ_SDA (GPIOB->IDR & GPIO_IDR_IDR9)
 
-#define I2C_DELAY Delay_us(2);
+#define I2C_DELAY  do { \
+    uint32_t start = DWT->CYCCNT; \
+    while ((DWT->CYCCNT - start) < 54); \
+} while(0)
 
 void I2C_SW_Init(void);
 void I2C_SW_Start(void);

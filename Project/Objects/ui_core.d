@@ -16,6 +16,8 @@
 .\objects\ui_core.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
 .\objects\ui_core.o: ..\BSP\Dev\Inc\bsp_oled.h
 .\objects\ui_core.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
+.\objects\ui_core.o: ..\Utils\Inc\delay.h
+.\objects\ui_core.o: ..\BSP\MCU\Inc\bsp_dwt.h
 .\objects\ui_core.o: ..\BSP\Dev\Inc\bsp_oled_data.h
 .\objects\ui_core.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stddef.h
 .\objects\ui_core.o: ..\App\UI\Page\Home\Inc\ui_page_home.h

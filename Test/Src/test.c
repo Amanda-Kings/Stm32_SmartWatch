@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "bsp_uart.h"
 #include "bsp_key.h"
+#include "bsp_sys_tick.h"
+#include "bsp_oled.h"
 void Test_Init(void)
 {
     UART1_Init();
@@ -55,4 +57,18 @@ static void Test_Key(void)
 void Test_Run(void)
 {
     Test_Key();
+}
+
+void Test_OLED_Update_Speed(void) {
+    // 1. 先绘制简单内容，模拟真实操作（可选）
+    OLED_Clear();                  // 清空显存
+    OLED_ShowString(0, 0, "Test", 8);  // 随便写点东西
+    // 此时显存已更新，但屏幕尚未刷新
+
+    // 2. 测量 OLED_Update 耗时
+    uint32_t start = SysTick_GetTick();
+    OLED_Update();                 // 将显存发送到屏幕
+    uint32_t elapsed = SysTick_GetTick() - start;
+
+    printf("OLED_Update 耗时: %lu ms\r\n", elapsed);
 }

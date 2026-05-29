@@ -9,8 +9,8 @@
 #ifdef TEST_DeBUG
 int main(void){    
     BSP_Init();         //初始化底层外设
-
-    Test_Run();
+    Test_OLED_Update_Speed();
+    // Test_Run();
     while (1)
     {
         

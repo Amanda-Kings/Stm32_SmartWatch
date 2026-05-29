@@ -13,6 +13,7 @@ static const UI_Page_VTable home_vtable = {
     .on_enter = Page_Home_OnEnter,
     .draw = Page_Home_Draw,
     .on_key_event = Page_Home_key
+    
 };
 // 菜单项定义
 static const UI_MenuItem menu_items[] = 
@@ -24,7 +25,7 @@ static const UI_MenuItem menu_items[] =
         .y = 48,
         .width = 32,
         .height = 16,
-        .target_page = UI_PAGE_MAX,
+        .target_page = UI_PAGE_MENU,
         .on_select = NULL
     },  // 跳转，无自定义动作
     { 

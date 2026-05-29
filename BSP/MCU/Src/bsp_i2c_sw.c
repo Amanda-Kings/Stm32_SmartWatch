@@ -1,5 +1,4 @@
 #include "bsp_i2c_sw.h"
-#include "delay.h"
 
 void I2C_SW_Init(void){
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
@@ -56,10 +55,6 @@ void I2C_SW_Nack(void){
 
 uint8_t I2C_SW_WaitAck(void)
 {
-    SCL_LOW;
-    SDA_HIGH;
-    I2C_DELAY;
-
     SCL_HIGH;
     I2C_DELAY;
 
@@ -76,9 +71,6 @@ void I2C_SW_SendByte(uint8_t byte)
    for(uint8_t i = 0; i < 8; i++)
    {
         SCL_LOW;
-        SDA_LOW;
-        I2C_DELAY;
-
         if(byte & 0x80)
         {
             SDA_HIGH;
@@ -92,11 +84,11 @@ void I2C_SW_SendByte(uint8_t byte)
         SCL_HIGH;
         I2C_DELAY;
 
-        SCL_LOW;
-        I2C_DELAY;
-
         byte <<= 1;
    }
+    SCL_LOW;
+    SDA_HIGH;
+    I2C_DELAY;
 }
 uint8_t I2C_SW_ReadByte(void)
 {

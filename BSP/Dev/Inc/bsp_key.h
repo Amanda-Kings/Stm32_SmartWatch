@@ -34,6 +34,9 @@ typedef void (*KeyCallback_t)(KeyEventInfo_TypeDef *info);
 // 3. 按键处理函数
 void Key_Init(void);
 void Key_RegisterCallback(Key_TypeDef type, KeyCallback_t callback);
+uint8_t Key_QueuePop(KeyEventInfo_TypeDef *info);
+void callbackItemRun(KeyEventInfo_TypeDef *info);
 void Key_Scan(void);
+void Key_Scan_Tick(void);
 
 #endif

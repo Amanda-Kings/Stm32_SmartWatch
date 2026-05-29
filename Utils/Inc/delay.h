@@ -8,6 +8,7 @@
 void Delay_us(uint16_t us);
 void Delay_ms(uint16_t ms);
 void Delay_s(uint16_t s);
+void Delay_ticks(uint32_t ticks);
 
 
 #endif

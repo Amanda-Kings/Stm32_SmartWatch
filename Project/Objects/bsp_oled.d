@@ -14,10 +14,10 @@
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_rtc.h
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\stm32f10x_usart.h
 .\objects\bsp_oled.o: ..\Lib\STM32F10x_StdPeriph_Driver\Inc\misc.h
+.\objects\bsp_oled.o: ..\Utils\Inc\delay.h
+.\objects\bsp_oled.o: ..\BSP\MCU\Inc\bsp_dwt.h
 .\objects\bsp_oled.o: ..\BSP\Dev\Inc\bsp_oled_data.h
 .\objects\bsp_oled.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdarg.h
 .\objects\bsp_oled.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\math.h
 .\objects\bsp_oled.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\string.h
 .\objects\bsp_oled.o: D:\AAAsoft\Keil_v5\ARM\ARMCOMPLIER506\Bin\..\include\stdio.h
-.\objects\bsp_oled.o: ..\Utils\Inc\delay.h
-.\objects\bsp_oled.o: ..\BSP\MCU\Inc\bsp_dwt.h
