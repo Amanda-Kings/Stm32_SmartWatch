@@ -6,6 +6,8 @@
 ".\objects\ui_page_setting_datetime.o"
 ".\objects\ui_page_menu.o"
 ".\objects\slide_menu.o"
+".\objects\ui_page_stopwatch.o"
+".\objects\ui_page_flashlight.o"
 ".\objects\bsp_led.o"
 ".\objects\bsp_uart.o"
 ".\objects\bsp_i2c_sw.o"

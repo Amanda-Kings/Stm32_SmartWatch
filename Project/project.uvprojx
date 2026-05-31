@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Lib\CMSIS;..\Lib\STM32F10x_StdPeriph_Driver\Inc;..\BSP\Dev\Inc;..\BSP\MCU\Inc;..\Inc;..\Utils\Inc;..\App\Core\Inc;..\App\UI\Core\Inc;..\Test\Inc;..\App\UI\Page\Home\Inc;..\App\UI\Page\Setting\Inc;..\App\UI\Page\Menu\Inc</IncludePath>
+              <IncludePath>..\Lib\CMSIS;..\Lib\STM32F10x_StdPeriph_Driver\Inc;..\BSP\Dev\Inc;..\BSP\MCU\Inc;..\Inc;..\Utils\Inc;..\App\Core\Inc;..\App\UI\Core\Inc;..\Test\Inc;..\App\UI\Page\Home\Inc;..\App\UI\Page\Setting\Inc;..\App\UI\Page\Menu\Inc;..\App\UI\Page\StopWatch\Inc;..\App\UI\Page\Flashlight\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -418,6 +418,16 @@
               <FileName>slide_menu.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\App\UI\Page\Menu\Src\slide_menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_page_stopwatch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\UI\Page\StopWatch\Src\ui_page_stopwatch.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_page_flashlight.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\UI\Page\Flashlight\Src\ui_page_flashlight.c</FilePath>
             </File>
           </Files>
         </Group>

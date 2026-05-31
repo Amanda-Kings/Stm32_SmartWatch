@@ -3,6 +3,7 @@
 #include "bsp_rtc.h"
 #include "bsp_uart.h"
 #include "bsp_oled.h"
+#include "bsp_led.h"
 #include "bsp_sys_tick.h"
 
 void BSP_Init(void)
@@ -13,4 +14,5 @@ void BSP_Init(void)
     OLED_Init();  
     SysTick_Init();
     Key_Init();
+    LED_Init();
 }

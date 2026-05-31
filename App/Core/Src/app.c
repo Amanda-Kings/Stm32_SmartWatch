@@ -5,6 +5,8 @@
 #include "ui_page_setting.h"
 #include "ui_page_setting_datetime.h"
 #include "ui_page_menu.h"
+#include "ui_page_stopwatch.h"
+#include "ui_page_flashlight.h"
 #include "bsp_sys_tick.h"
 
 void App_Init(void) {
@@ -26,7 +28,13 @@ void App_Init(void) {
     SetPageRefreshInterval(UI_PAGE_SETTING_DATETIME, 0);
 
     Page_Menu_Init();
-    SetPageRefreshInterval(UI_PAGE_MENU, 0); 
+    SetPageRefreshInterval(UI_PAGE_MENU, 0);
+
+    Page_StopWatch_Init();
+    SetPageRefreshInterval(UI_PAGE_STOPWATCH, 0); // 停表页面
+
+    Page_Flashlight_Init();
+    SetPageRefreshInterval(UI_PAGE_FLASHLIGHT, 0); // 手电筒页面
 }
 
 static void App_KeyEventTask(void) {

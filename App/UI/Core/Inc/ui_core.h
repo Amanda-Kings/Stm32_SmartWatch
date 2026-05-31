@@ -14,6 +14,8 @@ typedef enum
     UI_PAGE_MENU,               // 主菜单
     UI_PAGE_SETTING,            // 设置
     UI_PAGE_SETTING_DATETIME,   // 设置时间（二级页面）
+    UI_PAGE_STOPWATCH,          // 停表页面
+    UI_PAGE_FLASHLIGHT,         // 手电筒页面
     UI_PAGE_MAX
 } UI_Page_TypeDef;
 

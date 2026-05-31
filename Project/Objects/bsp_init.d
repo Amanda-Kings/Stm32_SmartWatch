@@ -21,4 +21,5 @@
 .\objects\bsp_init.o: ..\BSP\MCU\Inc\bsp_i2c_sw.h
 .\objects\bsp_init.o: ..\Utils\Inc\delay.h
 .\objects\bsp_init.o: ..\BSP\Dev\Inc\bsp_oled_data.h
+.\objects\bsp_init.o: ..\BSP\Dev\Inc\bsp_led.h
 .\objects\bsp_init.o: ..\BSP\MCU\Inc\bsp_sys_tick.h

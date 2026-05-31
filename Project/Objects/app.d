@@ -25,4 +25,6 @@
 .\objects\app.o: ..\App\UI\Page\Setting\Inc\ui_page_setting.h
 .\objects\app.o: ..\App\UI\Page\Setting\Inc\ui_page_setting_datetime.h
 .\objects\app.o: ..\App\UI\Page\Menu\Inc\ui_page_menu.h
+.\objects\app.o: ..\App\UI\Page\StopWatch\Inc\ui_page_stopwatch.h
+.\objects\app.o: ..\App\UI\Page\Flashlight\Inc\ui_page_flashlight.h
 .\objects\app.o: ..\BSP\MCU\Inc\bsp_sys_tick.h

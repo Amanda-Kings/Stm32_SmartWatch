@@ -10,7 +10,7 @@
 #define MENU_COUNT 7
 #define SCREEN_WIDTH 128
 
-#define ANIM_INTERVAL_MS  30       // 约 60fps
+#define ANIM_INTERVAL_MS  30       // 约33fps
 static uint32_t last_anim_tick = 0;
 
 static UI_Page page_meun;
@@ -65,6 +65,42 @@ static void Page_Meun_Draw(UI_Page *self)
     OLED_Update();
 }
 
+static UI_Page_TypeDef SwitchTarget(int8_t index)
+{
+    UI_Page_TypeDef target = UI_PAGE_MAX;
+    switch (index)
+    {
+        case 0:
+            target=UI_PAGE_HOME;
+            break;
+        case 1:
+            target=UI_PAGE_STOPWATCH;
+            break;
+        case 2:
+            target=UI_PAGE_FLASHLIGHT;
+            break;
+        case 3:
+            target=UI_PAGE_HOME;
+            break;
+        case 4:
+            target=UI_PAGE_HOME;
+            break;
+        case 5:
+            target=UI_PAGE_HOME;
+            break;
+        case 6:
+            target=UI_PAGE_HOME;
+            break;
+        case 7:
+            target=UI_PAGE_HOME;
+            break;
+        default:
+            target = UI_PAGE_MAX;
+            break;
+    }
+    return target;
+}
+
 static void Page_Meun_key(UI_Page *self, KeyEventInfo_TypeDef *key)
 {  
     if (key->event != KEY_EVENT_SHORT) return;
@@ -88,6 +124,7 @@ static void Page_Meun_key(UI_Page *self, KeyEventInfo_TypeDef *key)
             int8_t idx = SlideMenu_GetSelectedIndex(&menu);
                 if (idx >= 0) {
                     // 执行选中项的功能
+                    UI_SwitchPage(SwitchTarget(idx));
                 }
             break;
         default:
